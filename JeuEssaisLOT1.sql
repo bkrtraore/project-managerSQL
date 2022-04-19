@@ -15,12 +15,6 @@ VALUES(SeqFonction.nextval,'Distributeur', 'Distribuer les prospectus');
 INSERT INTO FONCTION(Id_Fonction, Nom_Fonction, Descrip_Fonction)
 VALUES(SeqFonction.nextval,'Trieur', 'Trier les prospectus');
 
-REM Ne fonctionne par car Nom_Fonction est NULL
-INSERT INTO FONCTION(Id_Fonction, Nom_Fonction, Descrip_Fonction)
-VALUES(SeqFonction.nextval, NULL, 'Hypothèse');
-
-
-
 INSERT INTO PROJET(Id_Projet, Libelle_Projet, NbAdherent, Budget)
 VALUES(SeqProjet.nextval, 'Environnement', 5, 20000);
 
@@ -32,12 +26,6 @@ VALUES(SeqProjet.nextval, 'Droit', 4, 45000);
 
 INSERT INTO PROJET(Id_Projet, Libelle_Projet, NbAdherent, Budget)
 VALUES(SeqProjet.nextval, 'GPI', 8, 52500);
-
-REM Ne fonctionne pas car contrainte Budget >= 0
-INSERT INTO PROJET(Id_Projet, Libelle_Projet, NbAdherent, Budget)
-VALUES(SeqProjet.nextval, 'GPI', 0, -650);
-
-
 
 INSERT INTO SEMINAIRE(Id_Sem, LibelleSem, Id_Projet)
 VALUES(SeqSeminaire.nextval, 'Ecosystèmes en péril', 1);
@@ -76,12 +64,6 @@ VALUES(SeqProspecteur.nextval,'Martin', 'Jerry', '13 avenue du palais', '0654821
 
 INSERT INTO PROSPECTEUR(Id_Pro, Nom_Pro, Prenom_Pro, Adresse_Pro, Tel_Pro, Mail_Pro, Id_Fonction)
 VALUES(SeqProspecteur.nextval,'Dupré', 'Isabelle', '56 avenue Leclerc', '0689526357', 'IsabelleDupre@gmail.com',4);
-
-REM Ne fonctionne pas car contrainte Id_Fonction ne se trouve pas dans FONCTION
-INSERT INTO PROSPECTEUR(Id_Pro, Nom_Pro, Prenom_Pro, Adresse_Pro, Tel_Pro, Mail_Pro, Id_Fonction)
-VALUES(SeqProspecteur.nextval,'Asda', 'Nash', '66 Avenue des roses', '0675962569', 'Nash96@gmail.com', 5);
-
-
 
 INSERT INTO ADHERER(Id_Pro, Id_Projet, DateAdhesion) VALUES(1, 1, '12/04/2020');
 INSERT INTO ADHERER(Id_Pro, Id_Projet, DateAdhesion) VALUES(1, 2, '15/04/2020');
